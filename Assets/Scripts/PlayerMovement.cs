@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        //Move and turn Player.
         if (Input.GetKey(KeyCode.W))
             transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
         if (Input.GetKey(KeyCode.S))
