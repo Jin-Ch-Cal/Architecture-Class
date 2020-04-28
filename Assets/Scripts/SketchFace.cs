@@ -17,6 +17,8 @@ public class SketchFace : MonoBehaviour
     Vector3 caculate0;
     Vector3 caculate3;
 
+    int clickCount = 0;
+
     void Awake()
     {
         mesh = GetComponent<MeshFilter>().mesh;
@@ -42,18 +44,30 @@ public class SketchFace : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        click1 = ReadMouseClick(click1);
+        
+        
+        if(clickCount == 0)
+        {
+            click1 = ReadMouseClick(click1);
+        }else if(clickCount == 1)
+        {
+            click2 = ReadMouseClick(click2);
+        }else if(clickCount > 1)
+        {
+            clickCount = 0;
+        }
+        
 
-        Vector3 delta12 = click2 - click1;
-        caculate0 = (click1 + new Vector3(delta12.z, 0, -delta12.x)) / 2 + click2 / 2;
-        caculate3 = (click1 + new Vector3(-delta12.z, 0, delta12.x)) / 2 + click2 / 2;
+        Caculate0and3();
 
         //Generating Mesh.
         MakeMeshData();
         CreateMesh();
     }
 
-    private Vector3 ReadMouseClick(Vector3 click1)
+    
+
+    private Vector3 ReadMouseClick(Vector3 clickx)
     {
         //Input mouse click positions in world.
         if (Input.GetMouseButtonDown(0))
@@ -70,14 +84,22 @@ public class SketchFace : MonoBehaviour
                 sampleClick = ray.GetPoint(distanceToPlane);
             }
 
-            //Log click position in world space ot the console.
+            clickCount ++;
+
             Debug.Log(sampleClick);
             return sampleClick;
         }
         else
         {
-            return click1;
+            return clickx;
         }
+    }
+
+    void Caculate0and3()
+    {
+        Vector3 delta12 = click2 - click1;
+        caculate0 = (click1 + new Vector3(delta12.z, 0, -delta12.x)) / 2 + click2 / 2;
+        caculate3 = (click1 + new Vector3(-delta12.z, 0, delta12.x)) / 2 + click2 / 2;
     }
 
 
