@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class SixVertexMesh : MonoBehaviour
 {
-    Mesh mesh;
+    Mesh mesh; 
 
     Vector3[] vertices;
     int[] triangles;
