@@ -22,7 +22,7 @@ public class SketchFace : MonoBehaviour
         mesh = GetComponent<MeshFilter>().mesh;
 
         click1 = new Vector3(0, 0, 1);
-        click2 = new Vector3(1, 0, 1);
+        click2 = new Vector3(0, 0, 0);
         
         //Caculate caculate0 from click1 and click2 based on perpendicular rule.
         Vector3 delta12 = click2 - click1;
@@ -33,20 +33,53 @@ public class SketchFace : MonoBehaviour
     void Start()
     {
         //Just for testing. Temporary.
-        Debug.Log("click1:" + click1.ToString()); 
-        Debug.Log("click2:" + click2.ToString());
-        Debug.Log("caculate0" + caculate0.ToString());
-        Debug.Log("caculate3" + caculate3.ToString());
+ //     Debug.Log("click1:" + click1.ToString()); 
+ //     Debug.Log("click2:" + click2.ToString());
+ //     Debug.Log("caculate0" + caculate0.ToString());
+ //     Debug.Log("caculate3" + caculate3.ToString());
     }
 
     // Start is called before the first frame update
     void Update()
     {
-        
+        click1 = ReadMouseClick(click1);
 
+        Vector3 delta12 = click2 - click1;
+        caculate0 = (click1 + new Vector3(delta12.z, 0, -delta12.x)) / 2 + click2 / 2;
+        caculate3 = (click1 + new Vector3(-delta12.z, 0, delta12.x)) / 2 + click2 / 2;
+
+        //Generating Mesh.
         MakeMeshData();
         CreateMesh();
     }
+
+    private Vector3 ReadMouseClick(Vector3 click1)
+    {
+        //Input mouse click positions in world.
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 sampleClick = -Vector3.one;
+
+            //Raycast collides with an infinite plane which y = 0.
+            Plane plane = new Plane(Vector3.up, 0f);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            float distanceToPlane;
+
+            if (plane.Raycast(ray, out distanceToPlane))
+            {
+                sampleClick = ray.GetPoint(distanceToPlane);
+            }
+
+            //Log click position in world space ot the console.
+            Debug.Log(sampleClick);
+            return sampleClick;
+        }
+        else
+        {
+            return click1;
+        }
+    }
+
 
     void MakeMeshData()
     {
