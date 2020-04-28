@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class YValue : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float yValue;
+    public static YValue ins;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        ins = this;
     }
 }
