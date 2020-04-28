@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+
 [RequireComponent(typeof(MeshFilter))]
 
 public class SketchFace : MonoBehaviour
@@ -31,14 +33,17 @@ public class SketchFace : MonoBehaviour
     void Start()
     {
         //Just for testing. Temporary.
-        Debug.Log(click1.ToString());
-        Debug.Log(caculate0.ToString());
-        Debug.Log(caculate3.ToString());
+        Debug.Log("click1:" + click1.ToString()); 
+        Debug.Log("click2:" + click2.ToString());
+        Debug.Log("caculate0" + caculate0.ToString());
+        Debug.Log("caculate3" + caculate3.ToString());
     }
 
     // Start is called before the first frame update
     void Update()
     {
+        
+
         MakeMeshData();
         CreateMesh();
     }
