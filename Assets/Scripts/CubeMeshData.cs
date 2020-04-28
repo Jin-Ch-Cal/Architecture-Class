@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class CubeMeshData
+public class CubeMeshData : MonoBehaviour
 {
     public static Vector3[] vertices =
     {
