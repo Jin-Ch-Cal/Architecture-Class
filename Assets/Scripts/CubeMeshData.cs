@@ -6,7 +6,7 @@ public class CubeMeshData : MonoBehaviour
 {
     public static Vector3[] vertices =
     {
-        new Vector3( 1, 1, 1),
+        new Vector3( 1, 2, 1),
         new Vector3(-1, 1, 1),
         new Vector3(-1,-1, 1),
         new Vector3( 1,-1, 1),
