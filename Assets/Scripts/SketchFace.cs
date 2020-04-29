@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -16,6 +17,8 @@ public class SketchFace : MonoBehaviour
     Vector3 click2;
     Vector3 caculate0;
     Vector3 caculate3;
+
+    Vector3 h = new Vector3(0, 1, 0);
 
     int clickCount = 0;
 
@@ -99,17 +102,27 @@ public class SketchFace : MonoBehaviour
     {
         Vector3 delta12 = click2 - click1;
         caculate0 = (click1 + new Vector3(delta12.z, 0, -delta12.x)) / 2 + click2 / 2;
-        caculate3 = (click1 + new Vector3(-delta12.z, 0, delta12.x)) / 2 + click2 / 2;
+        caculate3 = (click1 + new Vector3(-delta12.z, YValue.ins.yValue, delta12.x)) / 2 + click2 / 2;
     }
 
 
     void MakeMeshData()
     {
+        Vector3 y = new Vector3(0, YValue.ins.yValue, 0)/2;
+        
         //Create an array of vertices
-        vertices = new Vector3[] { caculate0, click1, click2, click2, click1, caculate3 };
+        vertices = new Vector3[] {  caculate0,      click1,     click2,              click2,         click1,            caculate3,
+                                    caculate0,      click2,     click2 - h,          caculate0,      click2 - h,        caculate0 - h,
+                                    click1,      caculate0,     caculate0 - h,       click1,         caculate0 - h,     click1 - h,
+                                    caculate3,      click1,     click1 - h,          caculate3,         click1 - h,         caculate3 - h - y,
+                                    click2,      caculate3,     caculate3 - h - y,       click2,          caculate3 - h - y,        click2 - h,};
 
         //create an array of integers
-        triangles = new int[] { 0, 1, 2, 3, 4, 5 };
+        triangles = new int[] { 0, 1, 2, 3, 4, 5,
+                                6, 7, 8, 9, 10, 11,
+                                12, 13, 14, 15, 16, 17,
+                                18, 19, 20, 21, 22, 23, 
+                                24, 25, 26, 27, 28, 29};
 
     }
 
