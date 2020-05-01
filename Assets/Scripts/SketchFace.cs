@@ -10,6 +10,7 @@ public class SketchFace : MonoBehaviour
 {
     Mesh mesh;
 
+    Vector3[] cubeP;
     Vector3[] vertices;
     int[] triangles;
 
@@ -26,8 +27,8 @@ public class SketchFace : MonoBehaviour
     {
         mesh = GetComponent<MeshFilter>().mesh;
 
-        click1 = new Vector3(0, 0, 1);
-        click2 = new Vector3(0, 0, 0);
+        click1 = new Vector3(0, 1, 1);
+        click2 = new Vector3(0, 1, 0);
         
         //Caculate caculate0 from click1 and click2 based on perpendicular rule.
         Vector3 delta12 = click2 - click1;
@@ -42,6 +43,8 @@ public class SketchFace : MonoBehaviour
  //     Debug.Log("click2:" + click2.ToString());
  //     Debug.Log("caculate0" + caculate0.ToString());
  //     Debug.Log("caculate3" + caculate3.ToString());
+
+        
     }
 
     // Start is called before the first frame update
@@ -77,8 +80,8 @@ public class SketchFace : MonoBehaviour
         {
             Vector3 sampleClick = -Vector3.one;
 
-            //Raycast collides with an infinite plane which y = 0.
-            Plane plane = new Plane(Vector3.up, 0f);
+            //Raycast collides with an infinite plane which y = 1.
+            Plane plane = new Plane(Vector3.up, -1f);
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             float distanceToPlane;
 
@@ -102,20 +105,24 @@ public class SketchFace : MonoBehaviour
     {
         Vector3 delta12 = click2 - click1;
         caculate0 = (click1 + new Vector3(delta12.z, 0, -delta12.x)) / 2 + click2 / 2;
-        caculate3 = (click1 + new Vector3(-delta12.z, YValue.ins.yValue, delta12.x)) / 2 + click2 / 2;
+        caculate3 = (click1 + new Vector3(-delta12.z, 0, delta12.x)) / 2 + click2 / 2;
     }
 
 
     void MakeMeshData()
     {
-        Vector3 y = new Vector3(0, YValue.ins.yValue, 0)/2;
+        Vector3 y = new Vector3(0, YValue.ins.yValue, 0);
+
+        //Create an array of eight cubePoints.
+        cubeP = new Vector3[] { caculate0, click1, click2, caculate3, caculate0 - h, click1 - h, click2 - h, caculate3 - h };
+
         
-        //Create an array of vertices
-        vertices = new Vector3[] {  caculate0,      click1,     click2,              click2,         click1,            caculate3,
-                                    caculate0,      click2,     click2 - h,          caculate0,      click2 - h,        caculate0 - h,
-                                    click1,      caculate0,     caculate0 - h,       click1,         caculate0 - h,     click1 - h,
-                                    caculate3,      click1,     click1 - h,          caculate3,         click1 - h,         caculate3 - h - y,
-                                    click2,      caculate3,     caculate3 - h - y,       click2,          caculate3 - h - y,        click2 - h,};
+        vertices = new Vector3[] {  cubeP[0],   cubeP[1],   cubeP[2],   cubeP[2],   cubeP[1],   cubeP[3],
+                                    cubeP[0],   cubeP[2],   cubeP[6],   cubeP[0],   cubeP[6],   cubeP[4],
+                                    cubeP[1],   cubeP[0],   cubeP[4],   cubeP[1],   cubeP[4],   cubeP[5],
+                                    cubeP[3],   cubeP[1],   cubeP[5],   cubeP[3],   cubeP[5],   cubeP[7],
+                                    cubeP[2],   cubeP[3],   cubeP[7],   cubeP[2],   cubeP[7],   cubeP[6],
+                                    cubeP[4],   cubeP[6],   cubeP[5],   cubeP[5],   cubeP[6],   cubeP[7],  };
 
         //create an array of integers
         triangles = new int[] { 0, 1, 2, 3, 4, 5,
