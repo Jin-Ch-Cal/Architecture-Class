@@ -408,6 +408,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5040373273954935991}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1824780784 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5040373274661353448, guid: 6bb615305fa513d4fbe5746315f5de0b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5040373273954935991}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1824780788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824780784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19634f2d576d6644bbf3a84af70d5ad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modelmoveSpeed: 0.3
+  modelturnSpeed: 7
 --- !u!1 &2102614956
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,17 +549,17 @@ PrefabInstance:
     - target: {fileID: 5040373274661353431, guid: 6bb615305fa513d4fbe5746315f5de0b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5040373274661353431, guid: 6bb615305fa513d4fbe5746315f5de0b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5040373274661353431, guid: 6bb615305fa513d4fbe5746315f5de0b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5040373274661353431, guid: 6bb615305fa513d4fbe5746315f5de0b,
         type: 3}
@@ -569,7 +589,7 @@ PrefabInstance:
     - target: {fileID: 5040373274661353448, guid: 6bb615305fa513d4fbe5746315f5de0b,
         type: 3}
       propertyPath: m_Name
-      value: Sketch Face
+      value: Sketch Cube
       objectReference: {fileID: 0}
     - target: {fileID: 5040373274661353448, guid: 6bb615305fa513d4fbe5746315f5de0b,
         type: 3}

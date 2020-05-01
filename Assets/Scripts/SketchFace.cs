@@ -16,13 +16,13 @@ public class SketchFace : MonoBehaviour
     Vector3[] vertices;
     int[] triangles;
 
-    Vector3 click1;
-    Vector3 click2;
+    public Vector3 click1;
+    public Vector3 click2;
     Vector3 click3;
     Vector3 caculate0;
     Vector3 caculate3;
 
-    Vector3 h = new Vector3(0, 1, 0);
+    public Vector3 h = new Vector3(0, 1, 0);
 
     int clickCount = 0;
 
@@ -68,7 +68,6 @@ public class SketchFace : MonoBehaviour
 
             h.y = (click2 - click3).y;
 
-            Debug.Log("click3: " + click3);
         } else if (clickCount > 1)
         {
             clickCount = 0;
@@ -119,7 +118,6 @@ public class SketchFace : MonoBehaviour
 
             clickCount++;
 
-            Debug.Log(sampleClick);
             return sampleClick;
         }
         else
@@ -164,7 +162,6 @@ public class SketchFace : MonoBehaviour
 
             clickCount ++;
 
-            Debug.Log(sampleClick);
             return sampleClick;
         }
         else
