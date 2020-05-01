@@ -52,13 +52,18 @@ public class SketchFace : MonoBehaviour
         if(clickCount == 0)
         {
             click1 = ReadMouseClick(click1);
-        }else if(clickCount == 1)
+            
+        }
+        else if(clickCount == 1)
         {
+            h.y = 0;
             click2 = ReadMouseMove();
             
             click2 = ReadMouseClick(click2);
         }else if (clickCount == 2) 
         {
+            click3 = ReadMouseMoveHeight();
+            
             click3 = ReadMouseClickHeight(click3);
 
             h.y = (click2 - click3).y;
@@ -67,6 +72,7 @@ public class SketchFace : MonoBehaviour
         } else if (clickCount > 1)
         {
             clickCount = 0;
+            
         }
         
 
@@ -75,6 +81,23 @@ public class SketchFace : MonoBehaviour
         //Generating Mesh.
         MakeMeshData();
         CreateMesh();
+    }
+
+    Vector3 ReadMouseMoveHeight()
+    {
+        Vector3 sampleClick = -Vector3.one;
+
+        //Raycast collides with an infinite plane which y = 1.
+        Plane plane = new Plane(maincamera.transform.forward, click2);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        float distanceToPlane;
+
+        if (plane.Raycast(ray, out distanceToPlane))
+        {
+            sampleClick = ray.GetPoint(distanceToPlane);
+        }
+
+        return sampleClick;
     }
 
     Vector3 ReadMouseClickHeight(Vector3 clickx)
@@ -119,7 +142,6 @@ public class SketchFace : MonoBehaviour
             sampleClick = ray.GetPoint(distanceToPlane);
         }
 
-        Debug.Log(sampleClick);
         return sampleClick;
     }
 
