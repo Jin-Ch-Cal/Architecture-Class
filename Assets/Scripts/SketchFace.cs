@@ -27,8 +27,8 @@ public class SketchFace : MonoBehaviour
     {
         mesh = GetComponent<MeshFilter>().mesh;
 
-        click1 = new Vector3(0, 1, 1);
-        click2 = new Vector3(0, 1, 0);
+        click1 = new Vector3(2f, 1f, 0);
+        click2 = new Vector3(1.5f, 1f, 0);
         
         //Caculate caculate0 from click1 and click2 based on perpendicular rule.
         Vector3 delta12 = click2 - click1;
@@ -38,12 +38,6 @@ public class SketchFace : MonoBehaviour
 
     void Start()
     {
-        //Just for testing. Temporary.
- //     Debug.Log("click1:" + click1.ToString()); 
- //     Debug.Log("click2:" + click2.ToString());
- //     Debug.Log("caculate0" + caculate0.ToString());
- //     Debug.Log("caculate3" + caculate3.ToString());
-
         
     }
 
@@ -51,12 +45,13 @@ public class SketchFace : MonoBehaviour
     void Update()
     {
         
-        
         if(clickCount == 0)
         {
             click1 = ReadMouseClick(click1);
         }else if(clickCount == 1)
         {
+            click2 = ReadMouseMove();
+            
             click2 = ReadMouseClick(click2);
         }else if(clickCount > 1)
         {
@@ -71,9 +66,25 @@ public class SketchFace : MonoBehaviour
         CreateMesh();
     }
 
-    
+    Vector3 ReadMouseMove()
+    {
+        Vector3 sampleClick = -Vector3.one;
 
-    private Vector3 ReadMouseClick(Vector3 clickx)
+        //Raycast collides with an infinite plane which y = 1.
+        Plane plane = new Plane(Vector3.up, -1f);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        float distanceToPlane;
+
+        if (plane.Raycast(ray, out distanceToPlane))
+        {
+            sampleClick = ray.GetPoint(distanceToPlane);
+        }
+
+        Debug.Log(sampleClick);
+        return sampleClick;
+    }
+
+    Vector3 ReadMouseClick(Vector3 clickx)
     {
         //Input mouse click positions in world.
         if (Input.GetMouseButtonDown(0))
@@ -116,7 +127,7 @@ public class SketchFace : MonoBehaviour
         //Create an array of eight cubePoints.
         cubeP = new Vector3[] { caculate0, click1, click2, caculate3, caculate0 - h, click1 - h, click2 - h, caculate3 - h };
 
-        
+        //Create an array of vertices.
         vertices = new Vector3[] {  cubeP[0],   cubeP[1],   cubeP[2],   cubeP[2],   cubeP[1],   cubeP[3],
                                     cubeP[0],   cubeP[2],   cubeP[6],   cubeP[0],   cubeP[6],   cubeP[4],
                                     cubeP[1],   cubeP[0],   cubeP[4],   cubeP[1],   cubeP[4],   cubeP[5],
