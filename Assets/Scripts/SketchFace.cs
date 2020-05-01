@@ -10,12 +10,15 @@ public class SketchFace : MonoBehaviour
 {
     Mesh mesh;
 
+    public GameObject maincamera;
+
     Vector3[] cubeP;
     Vector3[] vertices;
     int[] triangles;
 
     Vector3 click1;
     Vector3 click2;
+    Vector3 click3;
     Vector3 caculate0;
     Vector3 caculate3;
 
@@ -29,7 +32,8 @@ public class SketchFace : MonoBehaviour
 
         click1 = new Vector3(2f, 1f, 0);
         click2 = new Vector3(1.5f, 1f, 0);
-        
+        click3 = new Vector3(0, 0, 0);
+
         //Caculate caculate0 from click1 and click2 based on perpendicular rule.
         Vector3 delta12 = click2 - click1;
         caculate0 = (click1 + new Vector3(delta12.z, 0, -delta12.x)) / 2 + click2 / 2;
@@ -53,7 +57,14 @@ public class SketchFace : MonoBehaviour
             click2 = ReadMouseMove();
             
             click2 = ReadMouseClick(click2);
-        }else if(clickCount > 1)
+        }else if (clickCount == 2) 
+        {
+            click3 = ReadMouseClickHeight(click3);
+
+            h.y = (click2 - click3).y;
+
+            Debug.Log("click3: " + click3);
+        } else if (clickCount > 1)
         {
             clickCount = 0;
         }
@@ -64,6 +75,34 @@ public class SketchFace : MonoBehaviour
         //Generating Mesh.
         MakeMeshData();
         CreateMesh();
+    }
+
+    Vector3 ReadMouseClickHeight(Vector3 clickx)
+    {
+        //Input mouse click positions in world.
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 sampleClick = -Vector3.one;
+
+            //Raycast collides with an infinite plane which y = 1.
+            Plane plane = new Plane(maincamera.transform.forward, click2);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            float distanceToPlane;
+
+            if (plane.Raycast(ray, out distanceToPlane))
+            {
+                sampleClick = ray.GetPoint(distanceToPlane);
+            }
+
+            clickCount++;
+
+            Debug.Log(sampleClick);
+            return sampleClick;
+        }
+        else
+        {
+            return clickx;
+        }
     }
 
     Vector3 ReadMouseMove()
