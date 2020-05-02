@@ -106,7 +106,7 @@ public class SketchFace : MonoBehaviour
         {
             Vector3 sampleClick = -Vector3.one;
 
-            //Raycast collides with an infinite plane which y = 1.
+            //Raycast collides with an infinite plane which .
             Plane plane = new Plane(maincamera.transform.forward, click2);
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             float distanceToPlane;
