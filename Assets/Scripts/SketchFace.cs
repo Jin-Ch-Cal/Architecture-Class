@@ -68,10 +68,13 @@ public class SketchFace : MonoBehaviour
 
             h.y = (click2 - click3).y;
 
-        } else if (clickCount > 1)
+        } else if (clickCount == 3)
+        {
+            if (Input.GetMouseButtonDown(0)) clickCount++;
+            
+        }else if(clickCount > 3)
         {
             clickCount = 0;
-            
         }
         
 
