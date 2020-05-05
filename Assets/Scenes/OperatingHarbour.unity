@@ -832,6 +832,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cube Points
       objectReference: {fileID: 0}
+    - target: {fileID: 2454830350539089409, guid: 841ac30a3330f4747aa6152bbc97ec33,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6176914582855658395, guid: 841ac30a3330f4747aa6152bbc97ec33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -901,6 +906,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978271034986984826, guid: 841ac30a3330f4747aa6152bbc97ec33,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978271034986984826, guid: 841ac30a3330f4747aa6152bbc97ec33,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978271034986984826, guid: 841ac30a3330f4747aa6152bbc97ec33,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 841ac30a3330f4747aa6152bbc97ec33, type: 3}
