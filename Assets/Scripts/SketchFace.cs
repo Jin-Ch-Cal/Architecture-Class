@@ -11,6 +11,7 @@ public class SketchFace : MonoBehaviour
     Mesh mesh;
 
     public GameObject maincamera;
+    MoveVertice moveVertice;
 
     Vector3[] cubeP;
     Vector3[] vertices;
@@ -29,9 +30,10 @@ public class SketchFace : MonoBehaviour
     void Awake()
     {
         mesh = GetComponent<MeshFilter>().mesh;
+        moveVertice = GetComponent<MoveVertice>();
 
-        click1 = new Vector3(2f, 1f, 0);
-        click2 = new Vector3(1.5f, 1f, 0);
+        click1 = new Vector3(0, 0, 0);
+        click2 = new Vector3(0, 0, 0);
         click3 = new Vector3(0, 0, 0);
 
         //Caculate caculate0 from click1 and click2 based on perpendicular rule.
@@ -66,7 +68,7 @@ public class SketchFace : MonoBehaviour
             
             click3 = ReadMouseClickHeight(click3);
 
-            h.y = (click2 - click3).y;
+            h.y = (click3 - click2).y;
 
         } else if (clickCount == 3)
         {
@@ -186,22 +188,25 @@ public class SketchFace : MonoBehaviour
  //     Vector3 y = new Vector3(0, YValue.ins.yValue, 0);
 
         //Create an array of eight cubePoints.
-        cubeP = new Vector3[] { caculate0, click1, click2, caculate3, caculate0 - h, click1 - h, click2 - h, caculate3 - h };
+        cubeP = new Vector3[] { caculate0, click1, click2, caculate3, caculate0 + h, click1 + h, click2 + h, caculate3 + h };
 
+        cubeP[4] += moveVertice.vMove;
+        
         //Create an array of vertices.
         vertices = new Vector3[] {  cubeP[0],   cubeP[1],   cubeP[2],   cubeP[2],   cubeP[1],   cubeP[3],
-                                    cubeP[0],   cubeP[2],   cubeP[6],   cubeP[0],   cubeP[6],   cubeP[4],
-                                    cubeP[1],   cubeP[0],   cubeP[4],   cubeP[1],   cubeP[4],   cubeP[5],
-                                    cubeP[3],   cubeP[1],   cubeP[5],   cubeP[3],   cubeP[5],   cubeP[7],
-                                    cubeP[2],   cubeP[3],   cubeP[7],   cubeP[2],   cubeP[7],   cubeP[6],
-                                    cubeP[4],   cubeP[6],   cubeP[5],   cubeP[5],   cubeP[6],   cubeP[7],  };
+                                    cubeP[0],   cubeP[6],   cubeP[2],   cubeP[0],   cubeP[4],   cubeP[6],
+                                    cubeP[1],   cubeP[4],   cubeP[0],   cubeP[1],   cubeP[5],   cubeP[4],
+                                    cubeP[3],   cubeP[5],   cubeP[1],   cubeP[3],   cubeP[7],   cubeP[5],
+                                    cubeP[2],   cubeP[7],   cubeP[3],   cubeP[2],   cubeP[6],   cubeP[7],
+                                    cubeP[4],   cubeP[5],   cubeP[6],   cubeP[5],   cubeP[7],   cubeP[6],  };
 
         //create an array of integers
         triangles = new int[] { 0, 1, 2, 3, 4, 5,
                                 6, 7, 8, 9, 10, 11,
                                 12, 13, 14, 15, 16, 17,
                                 18, 19, 20, 21, 22, 23, 
-                                24, 25, 26, 27, 28, 29};
+                                24, 25, 26, 27, 28, 29,
+                                30, 31, 32, 33, 34, 35 };
 
     }
 
