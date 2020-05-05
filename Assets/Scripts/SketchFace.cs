@@ -13,7 +13,7 @@ public class SketchFace : MonoBehaviour
     public GameObject maincamera;
     MoveVertice moveVertice;
 
-    Vector3[] cubeP;
+    public Vector3[] cubeP;
     Vector3[] vertices;
     int[] triangles;
 
