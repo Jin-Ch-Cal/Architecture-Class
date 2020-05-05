@@ -190,7 +190,7 @@ public class SketchFace : MonoBehaviour
         //Create an array of eight cubePoints.
         cubeP = new Vector3[] { caculate0, click1, click2, caculate3, caculate0 + h, click1 + h, click2 + h, caculate3 + h };
 
-        cubeP[4] += moveVertice.vMove;
+        cubeP[4] += moveVertice.v4Move;
         
         //Create an array of vertices.
         vertices = new Vector3[] {  cubeP[0],   cubeP[1],   cubeP[2],   cubeP[2],   cubeP[1],   cubeP[3],
