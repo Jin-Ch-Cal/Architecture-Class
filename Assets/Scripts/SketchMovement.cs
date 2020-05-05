@@ -56,10 +56,6 @@ public class SketchMovement : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
-            ScaleAround(transform, (sketchFace.click1 + sketchFace.click2) / 2, new Vector3 (2,2,2));
-
-
     }
     public void ScaleAround(Transform target, Vector3 worldPivot, Vector3 newScale)
     {
