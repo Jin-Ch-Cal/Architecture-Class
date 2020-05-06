@@ -43,10 +43,12 @@ public class MoveVertice : MonoBehaviour
         sphere6.transform.position = sketchFace.cubeP[6];
         sphere7.transform.position = sketchFace.cubeP[7];
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
+
+            Debug.Log("cubeP[4] is " + sketchFace.cubeP[4]);
 
             if (Physics.Raycast(ray, out hit, 200))
             {

@@ -13,7 +13,7 @@ public class SketchFace : MonoBehaviour
     public GameObject maincamera;
     MoveVertice moveVertice;
 
-    public Vector3[] cubeP;
+    
     Vector3[] vertices;
     int[] triangles;
 
@@ -24,6 +24,11 @@ public class SketchFace : MonoBehaviour
     Vector3 caculate3;
 
     public Vector3 h = new Vector3(0, 1, 0);
+
+    public Vector3[] cubeP = new Vector3[] {new Vector3(0,0,0), new Vector3(0, 0, 0), new Vector3(0, 0, 0), new Vector3(0, 0, 0),
+                                            new Vector3(0,0,0), new Vector3(0,0,0), new Vector3(0,0,0), new Vector3(0,0,0),};
+
+    
 
     int clickCount = 0;
 
@@ -107,7 +112,7 @@ public class SketchFace : MonoBehaviour
     Vector3 ReadMouseClickHeight(Vector3 clickx)
     {
         //Input mouse click positions in world.
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             Vector3 sampleClick = -Vector3.one;
 
@@ -151,7 +156,7 @@ public class SketchFace : MonoBehaviour
     Vector3 ReadMouseClick(Vector3 clickx)
     {
         //Input mouse click positions in world.
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             Vector3 sampleClick = -Vector3.one;
 
@@ -188,7 +193,7 @@ public class SketchFace : MonoBehaviour
  //     Vector3 y = new Vector3(0, YValue.ins.yValue, 0);
 
         //Create an array of eight cubePoints.
-        cubeP = new Vector3[] { caculate0, click1, click2, caculate3, caculate0 + h, click1 + h, click2 + h, caculate3 + h };
+        cubeP = new [] { caculate0, click1, click2, caculate3, caculate0 + h, click1 + h, click2 + h, caculate3 + h };
 
         cubeP[4] += moveVertice.vMove4;
         cubeP[5] += moveVertice.vMove5;
