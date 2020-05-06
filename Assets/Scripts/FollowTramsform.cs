@@ -6,8 +6,8 @@ public class FollowTramsform : MonoBehaviour
 {
     public GameObject model;
 
-    UnityEngine.Vector3 deltaPosition;
-    UnityEngine.Vector3 bInitialPostion;
+    Vector3 deltaPosition;
+    Vector3 bInitialPostion;
 
 
     void Start()
