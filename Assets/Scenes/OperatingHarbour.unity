@@ -357,7 +357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &592513549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,7 +474,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdf2738e5e5f444e8ef0e6e5d274389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  v4Move: {x: 0, y: 0, z: 0}
+  vMove4: {x: 0, y: 0, z: 0}
+  vMove5: {x: 0, y: 0, z: 0}
+  vMove6: {x: 0, y: 0, z: 0}
+  vMove7: {x: 0, y: 0, z: 0}
   moveSpeed: 0.7
   turnSpeed: 50
 --- !u!1 &2102614956
@@ -690,6 +693,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3824737128842579065, guid: ea1595c8978d3bc4e81322c0e4562c5a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3824737130266883400, guid: ea1595c8978d3bc4e81322c0e4562c5a,
         type: 3}
       propertyPath: sketchCube
@@ -900,17 +908,17 @@ PrefabInstance:
     - target: {fileID: 7002085866714501840, guid: 75a016a85e6a74145a87e61516ebcd91,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.009
+      value: 0.069
       objectReference: {fileID: 0}
     - target: {fileID: 7002085866714501840, guid: 75a016a85e6a74145a87e61516ebcd91,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5288
+      value: 0.52745
       objectReference: {fileID: 0}
     - target: {fileID: 7002085866714501840, guid: 75a016a85e6a74145a87e61516ebcd91,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.202
+      value: 0.169
       objectReference: {fileID: 0}
     - target: {fileID: 7002085866714501840, guid: 75a016a85e6a74145a87e61516ebcd91,
         type: 3}
