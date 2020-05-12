@@ -49,7 +49,8 @@ public class SketchFace : MonoBehaviour
 
     void Start()
     {
-        
+        MakeMeshData();
+        CreateMesh();
     }
 
     // Start is called before the first frame update
@@ -207,7 +208,7 @@ public class SketchFace : MonoBehaviour
                                     cubeP[1],   cubeP[4],   cubeP[0],   cubeP[1],   cubeP[5],   cubeP[4],
                                     cubeP[3],   cubeP[5],   cubeP[1],   cubeP[3],   cubeP[7],   cubeP[5],
                                     cubeP[2],   cubeP[7],   cubeP[3],   cubeP[2],   cubeP[6],   cubeP[7],
-                                    cubeP[4],   cubeP[5],   cubeP[6],   cubeP[5],   cubeP[7],   cubeP[6],  };
+                                    cubeP[4],   cubeP[5],   cubeP[6],   cubeP[5],   cubeP[7],   cubeP[6]  };
 
         //create an array of integers
         triangles = new int[] { 0, 1, 2, 3, 4, 5,
