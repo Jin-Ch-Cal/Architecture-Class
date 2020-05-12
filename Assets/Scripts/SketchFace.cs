@@ -191,7 +191,6 @@ public class SketchFace : MonoBehaviour
 
     void MakeMeshData()
     {
- //     Vector3 y = new Vector3(0, YValue.ins.yValue, 0);
 
         //Create an array of eight cubePoints.
         cubeP = new [] { caculate0, click1, click2, caculate3, caculate0 + h, click1 + h, click2 + h, caculate3 + h };

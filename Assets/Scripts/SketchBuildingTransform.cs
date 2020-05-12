@@ -14,25 +14,21 @@ public class SketchBuildingTransform : MonoBehaviour
     Vector3[] vertices;
     int[] triangles;
     Vector3[] buildingP;
-    Vector3 deltaPosition;
-    Vector3 bInitialPostion;
+    public Vector3 aZeroP = new Vector3 (0f, 0.52f, 0f);
+    public Vector3 bZeroP = new Vector3 (6f, 0f, 72f);
+
 
     void Awake()
     {
         mesh = GetComponent<MeshFilter>().mesh;
         sketchFace = sketchCube.GetComponent<SketchFace>();
 
-        bInitialPostion = transform.position;
-        deltaPosition = transform.position - sketchCube.transform.position;
 
- //     for(int i = 0; i <= 7; i++)
- //     {
- //         buildingP[i] = new Vector3(0, 0, 0);
- //     }
-    }
+     }
 
     void Start()
     {
+        
         MakeMeshData();
         CreateMesh();
     }
@@ -59,17 +55,16 @@ public class SketchBuildingTransform : MonoBehaviour
         //     }
 
         //Assign values to buidlingPs from cubePs.
-        buildingP = new[] { ( sketchFace.cubeP[0] - new Vector3(0,0.52f,0) ) * 2, 
-                            ( sketchFace.cubeP[1] - new Vector3(0,0.52f,0) ) * 2, 
-                            ( sketchFace.cubeP[2] - new Vector3(0,0.52f,0) ) * 2, 
-                            ( sketchFace.cubeP[3] - new Vector3(0,0.52f,0) ) * 2, 
-                            ( sketchFace.cubeP[4] - new Vector3(0,0.52f,0) ) * 2, 
-                            ( sketchFace.cubeP[5] - new Vector3(0,0.52f,0) ) * 2, 
-                            ( sketchFace.cubeP[6] - new Vector3(0,0.52f,0) ) * 2, 
-                            ( sketchFace.cubeP[7] - new Vector3(0,0.52f,0) ) * 2  };
+        buildingP = new[] { ( sketchFace.cubeP[0] - aZeroP ) * 250 + bZeroP, 
+                            ( sketchFace.cubeP[1] - aZeroP ) * 250 + bZeroP, 
+                            ( sketchFace.cubeP[2] - aZeroP ) * 250 + bZeroP, 
+                            ( sketchFace.cubeP[3] - aZeroP ) * 250 + bZeroP, 
+                            ( sketchFace.cubeP[4] - aZeroP ) * 250 + bZeroP, 
+                            ( sketchFace.cubeP[5] - aZeroP ) * 250 + bZeroP, 
+                            ( sketchFace.cubeP[6] - aZeroP ) * 250 + bZeroP, 
+                            ( sketchFace.cubeP[7] - aZeroP ) * 250 + bZeroP  };
 
-
-
+        //Create an array of vertices.
         vertices = new Vector3[] {  buildingP[0],   buildingP[1],   buildingP[2],   buildingP[2],   buildingP[1],   buildingP[3],
                                     buildingP[0],   buildingP[6],   buildingP[2],   buildingP[0],   buildingP[4],   buildingP[6],
                                     buildingP[1],   buildingP[4],   buildingP[0],   buildingP[1],   buildingP[5],   buildingP[4],
@@ -77,6 +72,7 @@ public class SketchBuildingTransform : MonoBehaviour
                                     buildingP[2],   buildingP[7],   buildingP[3],   buildingP[2],   buildingP[6],   buildingP[7],
                                     buildingP[4],   buildingP[5],   buildingP[6],   buildingP[5],   buildingP[7],   buildingP[6]  };
 
+        //create an array of integers
         triangles = new int[] { 0, 1, 2, 3, 4, 5,
                                 6, 7, 8, 9, 10, 11,
                                 12, 13, 14, 15, 16, 17,
