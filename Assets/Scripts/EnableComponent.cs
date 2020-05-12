@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.DocZh.Models.Json;
 using UnityEngine;
 
@@ -7,10 +8,14 @@ public class EnableComponent : MonoBehaviour
 {
     public GameObject sketchCube;
     public GameObject blueModel;
+    public GameObject cityModelFollow;
     private SketchMovement sketchMovement;
     private SketchFace sketchFace;
     private MoveVertice moveVertice;
     private ModelMovement modelMovement;
+
+    public bool show = true;
+    
 
     private void Awake()
     {
@@ -52,6 +57,12 @@ public class EnableComponent : MonoBehaviour
     {
         DisableAllComponent();
         modelMovement.enabled = !modelMovement.enabled;
+    }
+
+    public void SwitchCityModelFollow()
+    {
+        show = !show;
+        cityModelFollow.SetActive(show);
     }
 }
 

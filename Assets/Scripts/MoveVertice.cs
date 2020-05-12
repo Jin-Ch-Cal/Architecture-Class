@@ -14,6 +14,7 @@ public class MoveVertice : MonoBehaviour
 
     public float moveSpeed = 10f;
     public float turnSpeed = 50f;
+    public float clickarea = 0.01f;
 
     int selectedone = 0;
 
@@ -52,33 +53,33 @@ public class MoveVertice : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 200))
             {
-                if ((hit.point - sketchFace.cubeP[4]).x < 0.1 &&
-                    (hit.point - sketchFace.cubeP[4]).y < 0.1 &&
-                    (hit.point - sketchFace.cubeP[4]).z < 0.1)
+                if ((hit.point - sketchFace.cubeP[4]).x < 0.01 &&
+                    (hit.point - sketchFace.cubeP[4]).y < 0.01 &&
+                    (hit.point - sketchFace.cubeP[4]).z < 0.01)
                 {
                     Debug.Log("click4!");
 
                     selectedone = 4;
                 }
-                else if ((hit.point - sketchFace.cubeP[5]).x < 0.1 &&
-                   (hit.point - sketchFace.cubeP[5]).y < 0.1 &&
-                   (hit.point - sketchFace.cubeP[5]).z < 0.1)
+                else if ((hit.point - sketchFace.cubeP[5]).x < 0.01 &&
+                   (hit.point - sketchFace.cubeP[5]).y < 0.01 &&
+                   (hit.point - sketchFace.cubeP[5]).z < 0.01)
                 {
                     Debug.Log("click5!");
 
                     selectedone = 5;
                 }
-                else if ((hit.point - sketchFace.cubeP[6]).x < 0.1 &&
-                   (hit.point - sketchFace.cubeP[6]).y < 0.1 &&
-                   (hit.point - sketchFace.cubeP[6]).z < 0.1)
+                else if ((hit.point - sketchFace.cubeP[6]).x < 0.01 &&
+                   (hit.point - sketchFace.cubeP[6]).y < 0.01 &&
+                   (hit.point - sketchFace.cubeP[6]).z < 0.01)
                 {
                     Debug.Log("click6!");
 
                     selectedone = 6;
                 }
-                else if ((hit.point - sketchFace.cubeP[7]).x < 0.1 &&
-                  (hit.point - sketchFace.cubeP[7]).y < 0.1 &&
-                  (hit.point - sketchFace.cubeP[7]).z < 0.1)
+                else if ((hit.point - sketchFace.cubeP[7]).x < 0.01 &&
+                  (hit.point - sketchFace.cubeP[7]).y < 0.01 &&
+                  (hit.point - sketchFace.cubeP[7]).z < 0.01)
                 {
                     Debug.Log("click7!");
 
