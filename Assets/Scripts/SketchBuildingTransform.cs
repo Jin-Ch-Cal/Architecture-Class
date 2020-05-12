@@ -9,6 +9,8 @@ public class SketchBuildingTransform : MonoBehaviour
 {
     Mesh mesh;
     public GameObject sketchCube;
+    public GameObject cityModelStill;
+    public GameObject cityModelFollow;
     private SketchFace sketchFace;
 
     Vector3[] vertices;
@@ -16,6 +18,7 @@ public class SketchBuildingTransform : MonoBehaviour
     Vector3[] buildingP;
     public Vector3 aZeroP = new Vector3 (0f, 0.52f, 0f);
     public Vector3 bZeroP = new Vector3 (6f, 0f, 72f);
+    Vector3 playerDistance;
 
 
     void Awake()
@@ -23,7 +26,7 @@ public class SketchBuildingTransform : MonoBehaviour
         mesh = GetComponent<MeshFilter>().mesh;
         sketchFace = sketchCube.GetComponent<SketchFace>();
 
-
+        playerDistance = cityModelFollow.transform.position - cityModelStill.transform.position;
      }
 
     void Start()
@@ -36,15 +39,12 @@ public class SketchBuildingTransform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        playerDistance = cityModelFollow.transform.position - cityModelStill.transform.position;
+
         MakeMeshData();
         CreateMesh();
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Debug.Log("0: " + buildingP[0] + sketchFace.cubeP[0]);
-            Debug.Log("1: " + buildingP[1] + sketchFace.cubeP[1]);
-            Debug.Log("2: " + buildingP[2] + sketchFace.cubeP[2]);
-        }
+        
     }
 
     void MakeMeshData()
@@ -55,14 +55,14 @@ public class SketchBuildingTransform : MonoBehaviour
         //     }
 
         //Assign values to buidlingPs from cubePs.
-        buildingP = new[] { ( sketchFace.cubeP[0] - aZeroP ) * 250 + bZeroP, 
-                            ( sketchFace.cubeP[1] - aZeroP ) * 250 + bZeroP, 
-                            ( sketchFace.cubeP[2] - aZeroP ) * 250 + bZeroP, 
-                            ( sketchFace.cubeP[3] - aZeroP ) * 250 + bZeroP, 
-                            ( sketchFace.cubeP[4] - aZeroP ) * 250 + bZeroP, 
-                            ( sketchFace.cubeP[5] - aZeroP ) * 250 + bZeroP, 
-                            ( sketchFace.cubeP[6] - aZeroP ) * 250 + bZeroP, 
-                            ( sketchFace.cubeP[7] - aZeroP ) * 250 + bZeroP  };
+        buildingP = new[] { ( sketchFace.cubeP[0] - aZeroP - playerDistance ) * 250 + bZeroP, 
+                            ( sketchFace.cubeP[1] - aZeroP - playerDistance ) * 250 + bZeroP, 
+                            ( sketchFace.cubeP[2] - aZeroP - playerDistance ) * 250 + bZeroP, 
+                            ( sketchFace.cubeP[3] - aZeroP - playerDistance ) * 250 + bZeroP, 
+                            ( sketchFace.cubeP[4] - aZeroP - playerDistance ) * 250 + bZeroP, 
+                            ( sketchFace.cubeP[5] - aZeroP - playerDistance ) * 250 + bZeroP, 
+                            ( sketchFace.cubeP[6] - aZeroP - playerDistance ) * 250 + bZeroP, 
+                            ( sketchFace.cubeP[7] - aZeroP - playerDistance ) * 250 + bZeroP  };
 
         //Create an array of vertices.
         vertices = new Vector3[] {  buildingP[0],   buildingP[1],   buildingP[2],   buildingP[2],   buildingP[1],   buildingP[3],
