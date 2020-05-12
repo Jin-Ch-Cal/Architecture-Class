@@ -58,18 +58,18 @@ public class SketchBuildingTransform : MonoBehaviour
         //         buildingP[i] = sketchFace.cubeP[i] * 2;
         //     }
 
-        buildingP = new[] { sketchFace.cubeP[0] * 2, 
-                            sketchFace.cubeP[1] * 2, 
-                            sketchFace.cubeP[2] * 2, 
-                            sketchFace.cubeP[3] * 2, 
-                            sketchFace.cubeP[4] * 2, 
-                            sketchFace.cubeP[5] * 2, 
-                            sketchFace.cubeP[6] * 2, 
-                            sketchFace.cubeP[7] * 2  };
+        //Assign values to buidlingPs from cubePs.
+        buildingP = new[] { ( sketchFace.cubeP[0] - new Vector3(0,0.52f,0) ) * 2, 
+                            ( sketchFace.cubeP[1] - new Vector3(0,0.52f,0) ) * 2, 
+                            ( sketchFace.cubeP[2] - new Vector3(0,0.52f,0) ) * 2, 
+                            ( sketchFace.cubeP[3] - new Vector3(0,0.52f,0) ) * 2, 
+                            ( sketchFace.cubeP[4] - new Vector3(0,0.52f,0) ) * 2, 
+                            ( sketchFace.cubeP[5] - new Vector3(0,0.52f,0) ) * 2, 
+                            ( sketchFace.cubeP[6] - new Vector3(0,0.52f,0) ) * 2, 
+                            ( sketchFace.cubeP[7] - new Vector3(0,0.52f,0) ) * 2  };
 
-        //     buildingP[1] = sketchFace.cubeP[1] * 2;
 
-        
+
         vertices = new Vector3[] {  buildingP[0],   buildingP[1],   buildingP[2],   buildingP[2],   buildingP[1],   buildingP[3],
                                     buildingP[0],   buildingP[6],   buildingP[2],   buildingP[0],   buildingP[4],   buildingP[6],
                                     buildingP[1],   buildingP[4],   buildingP[0],   buildingP[1],   buildingP[5],   buildingP[4],
