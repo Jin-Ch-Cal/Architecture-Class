@@ -11,6 +11,8 @@ public class SketchBuildingTransform : MonoBehaviour
     public GameObject sketchCube;
     public GameObject cityModelStill;
     public GameObject cityModelFollow;
+    public GameObject enableComponentManager;
+    private EnableComponent enableComponent;
     private SketchFace sketchFace;
 
     Vector3[] vertices;
@@ -25,8 +27,9 @@ public class SketchBuildingTransform : MonoBehaviour
     {
         mesh = GetComponent<MeshFilter>().mesh;
         sketchFace = sketchCube.GetComponent<SketchFace>();
+        enableComponent = enableComponentManager.GetComponent<EnableComponent>();
 
-        playerDistance = cityModelFollow.transform.position - cityModelStill.transform.position;
+        DecidePlayerDistance();
      }
 
     void Start()
@@ -39,12 +42,23 @@ public class SketchBuildingTransform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerDistance = cityModelFollow.transform.position - cityModelStill.transform.position;
+        DecidePlayerDistance();
 
         MakeMeshData();
         CreateMesh();
+    }
 
-        
+    void DecidePlayerDistance()
+    {
+        if(enableComponent.show == true)
+        {
+            playerDistance = cityModelFollow.transform.position - cityModelStill.transform.position;
+
+        }
+        else
+        {
+            playerDistance = Vector3.zero;
+        }
     }
 
     void MakeMeshData()

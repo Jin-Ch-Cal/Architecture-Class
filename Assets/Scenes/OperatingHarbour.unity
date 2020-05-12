@@ -967,6 +967,7 @@ MonoBehaviour:
   sketchCube: {fileID: 1824780784}
   cityModelStill: {fileID: 1378183167}
   cityModelFollow: {fileID: 2067949010}
+  enableComponentManager: {fileID: 2080289098}
   aZeroP: {x: 0, y: 0.52, z: 0}
   bZeroP: {x: 6, y: 0, z: 33}
 --- !u!1 &797054559

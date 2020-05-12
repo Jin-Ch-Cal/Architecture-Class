@@ -14,7 +14,7 @@ public class EnableComponent : MonoBehaviour
     private MoveVertice moveVertice;
     private ModelMovement modelMovement;
 
-    public bool show = true;
+    public bool show = false;
     
 
     private void Awake()
@@ -25,6 +25,10 @@ public class EnableComponent : MonoBehaviour
         modelMovement = blueModel.GetComponent<ModelMovement>();
 
         DisableAllComponent();
+
+        show = false;
+        cityModelFollow.SetActive(show);
+
 
     }
 
