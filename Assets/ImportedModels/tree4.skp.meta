@@ -1,0 +1,514 @@
+fileFormatVersion: 2
+guid: 066c6cb5eebc06f40b17d5168f86c5d9
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a0000007b0000007c0000007d0000007e0000007f000000800000008100000082000000830000008400000085000000860000008700000088000000890000008a0000008b0000008c0000008d0000008e0000008f000000900000009100000092000000930000009400000095000000960000009700000098000000990000009a0000009b0000009c0000009d0000009e0000009f000000a0000000a1000000a2000000a3000000a4000000a5000000a6000000a7000000a8000000a9000000aa000000ab000000ac000000ad000000ae000000af000000b0000000b1000000b2000000b3000000b4000000b5000000b6000000b7000000b8000000b9000000ba000000bb000000bc000000bd000000be000000bf000000c0000000c1000000c2000000c3000000c4000000c5000000c6000000c7000000
+  assetHash:
+    serializedVersion: 2
+    Hash: 25e0a74b2d18acbc33ee5d68fe28c361
+  longitude: 121.14433165704625
+  latitude: 14.265313709576027
+  northCorrection: 359.53938311326203
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 8.280721, y: 1.9753811, z: 9.633984}
+      lookAt: {x: 2.81141, y: 2.627121, z: 3.3253222}
+      up: {x: 0.050977293, y: 0.9969673, z: 0.05880054}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: eaf1
+    100002: eaf1 1
+    100004: eaf1 10
+    100006: eaf1 11
+    100008: eaf1 12
+    100010: eaf1 13
+    100012: eaf1 14
+    100014: eaf1 15
+    100016: eaf1 16
+    100018: eaf1 17
+    100020: eaf1 18
+    100022: eaf1 19
+    100024: eaf1 2
+    100026: eaf1 20
+    100028: eaf1 21
+    100030: eaf1 22
+    100032: eaf1 23
+    100034: eaf1 24
+    100036: eaf1 25
+    100038: eaf1 26
+    100040: eaf1 27
+    100042: eaf1 28
+    100044: eaf1 29
+    100046: eaf1 3
+    100048: eaf1 30
+    100050: eaf1 31
+    100052: eaf1 32
+    100054: eaf1 33
+    100056: eaf1 34
+    100058: eaf1 35
+    100060: eaf1 36
+    100062: eaf1 37
+    100064: eaf1 38
+    100066: eaf1 39
+    100068: eaf1 4
+    100070: eaf1 40
+    100072: eaf1 41
+    100074: eaf1 42
+    100076: eaf1 43
+    100078: eaf1 44
+    100080: eaf1 45
+    100082: eaf1 46
+    100084: eaf1 47
+    100086: eaf1 48
+    100088: eaf1 49
+    100090: eaf1 5
+    100092: eaf1 50
+    100094: eaf1 51
+    100096: eaf1 52
+    100098: eaf1 53
+    100100: eaf1 54
+    100102: eaf1 55
+    100104: eaf1 56
+    100106: eaf1 57
+    100108: eaf1 58
+    100110: eaf1 59
+    100112: eaf1 6
+    100114: eaf1 60
+    100116: eaf1 61
+    100118: eaf1 62
+    100120: eaf1 63
+    100122: eaf1 64
+    100124: eaf1 65
+    100126: eaf1 66
+    100128: eaf1 67
+    100130: eaf1 68
+    100132: eaf1 69
+    100134: eaf1 7
+    100136: eaf1 70
+    100138: eaf1 71
+    100140: eaf1 72
+    100142: eaf1 73
+    100144: eaf1 74
+    100146: eaf1 75
+    100148: eaf1 76
+    100150: eaf1 77
+    100152: eaf1 78
+    100154: eaf1 79
+    100156: eaf1 8
+    100158: eaf1 80
+    100160: eaf1 81
+    100162: eaf1 82
+    100164: eaf1 83
+    100166: eaf1 84
+    100168: eaf1 85
+    100170: eaf1 86
+    100172: eaf1 87
+    100174: eaf1 88
+    100176: eaf1 89
+    100178: eaf1 9
+    100180: eaf1 90
+    100182: eaf1 91
+    100184: eaf1 92
+    100186: eaf1 93
+    100188: eaf1 94
+    100190: eaf1 95
+    100192: eaf1 96
+    100194: eaf1 97
+    100196: eaf1 98
+    100198: //RootNode
+    400000: eaf1
+    400002: eaf1 1
+    400004: eaf1 10
+    400006: eaf1 11
+    400008: eaf1 12
+    400010: eaf1 13
+    400012: eaf1 14
+    400014: eaf1 15
+    400016: eaf1 16
+    400018: eaf1 17
+    400020: eaf1 18
+    400022: eaf1 19
+    400024: eaf1 2
+    400026: eaf1 20
+    400028: eaf1 21
+    400030: eaf1 22
+    400032: eaf1 23
+    400034: eaf1 24
+    400036: eaf1 25
+    400038: eaf1 26
+    400040: eaf1 27
+    400042: eaf1 28
+    400044: eaf1 29
+    400046: eaf1 3
+    400048: eaf1 30
+    400050: eaf1 31
+    400052: eaf1 32
+    400054: eaf1 33
+    400056: eaf1 34
+    400058: eaf1 35
+    400060: eaf1 36
+    400062: eaf1 37
+    400064: eaf1 38
+    400066: eaf1 39
+    400068: eaf1 4
+    400070: eaf1 40
+    400072: eaf1 41
+    400074: eaf1 42
+    400076: eaf1 43
+    400078: eaf1 44
+    400080: eaf1 45
+    400082: eaf1 46
+    400084: eaf1 47
+    400086: eaf1 48
+    400088: eaf1 49
+    400090: eaf1 5
+    400092: eaf1 50
+    400094: eaf1 51
+    400096: eaf1 52
+    400098: eaf1 53
+    400100: eaf1 54
+    400102: eaf1 55
+    400104: eaf1 56
+    400106: eaf1 57
+    400108: eaf1 58
+    400110: eaf1 59
+    400112: eaf1 6
+    400114: eaf1 60
+    400116: eaf1 61
+    400118: eaf1 62
+    400120: eaf1 63
+    400122: eaf1 64
+    400124: eaf1 65
+    400126: eaf1 66
+    400128: eaf1 67
+    400130: eaf1 68
+    400132: eaf1 69
+    400134: eaf1 7
+    400136: eaf1 70
+    400138: eaf1 71
+    400140: eaf1 72
+    400142: eaf1 73
+    400144: eaf1 74
+    400146: eaf1 75
+    400148: eaf1 76
+    400150: eaf1 77
+    400152: eaf1 78
+    400154: eaf1 79
+    400156: eaf1 8
+    400158: eaf1 80
+    400160: eaf1 81
+    400162: eaf1 82
+    400164: eaf1 83
+    400166: eaf1 84
+    400168: eaf1 85
+    400170: eaf1 86
+    400172: eaf1 87
+    400174: eaf1 88
+    400176: eaf1 89
+    400178: eaf1 9
+    400180: eaf1 90
+    400182: eaf1 91
+    400184: eaf1 92
+    400186: eaf1 93
+    400188: eaf1 94
+    400190: eaf1 95
+    400192: eaf1 96
+    400194: eaf1 97
+    400196: eaf1 98
+    400198: //RootNode
+    2100000: _BurlyWood_1
+    2300000: eaf1
+    2300002: eaf1 1
+    2300004: eaf1 10
+    2300006: eaf1 11
+    2300008: eaf1 12
+    2300010: eaf1 13
+    2300012: eaf1 14
+    2300014: eaf1 15
+    2300016: eaf1 16
+    2300018: eaf1 17
+    2300020: eaf1 18
+    2300022: eaf1 19
+    2300024: eaf1 2
+    2300026: eaf1 20
+    2300028: eaf1 21
+    2300030: eaf1 22
+    2300032: eaf1 23
+    2300034: eaf1 24
+    2300036: eaf1 25
+    2300038: eaf1 26
+    2300040: eaf1 27
+    2300042: eaf1 28
+    2300044: eaf1 29
+    2300046: eaf1 3
+    2300048: eaf1 30
+    2300050: eaf1 31
+    2300052: eaf1 32
+    2300054: eaf1 33
+    2300056: eaf1 34
+    2300058: eaf1 35
+    2300060: eaf1 36
+    2300062: eaf1 37
+    2300064: eaf1 38
+    2300066: eaf1 39
+    2300068: eaf1 4
+    2300070: eaf1 40
+    2300072: eaf1 41
+    2300074: eaf1 42
+    2300076: eaf1 43
+    2300078: eaf1 44
+    2300080: eaf1 45
+    2300082: eaf1 46
+    2300084: eaf1 47
+    2300086: eaf1 48
+    2300088: eaf1 49
+    2300090: eaf1 5
+    2300092: eaf1 50
+    2300094: eaf1 51
+    2300096: eaf1 52
+    2300098: eaf1 53
+    2300100: eaf1 54
+    2300102: eaf1 55
+    2300104: eaf1 56
+    2300106: eaf1 57
+    2300108: eaf1 58
+    2300110: eaf1 59
+    2300112: eaf1 6
+    2300114: eaf1 60
+    2300116: eaf1 61
+    2300118: eaf1 62
+    2300120: eaf1 63
+    2300122: eaf1 64
+    2300124: eaf1 65
+    2300126: eaf1 66
+    2300128: eaf1 67
+    2300130: eaf1 68
+    2300132: eaf1 69
+    2300134: eaf1 7
+    2300136: eaf1 70
+    2300138: eaf1 71
+    2300140: eaf1 72
+    2300142: eaf1 73
+    2300144: eaf1 74
+    2300146: eaf1 75
+    2300148: eaf1 76
+    2300150: eaf1 77
+    2300152: eaf1 78
+    2300154: eaf1 79
+    2300156: eaf1 8
+    2300158: eaf1 80
+    2300160: eaf1 81
+    2300162: eaf1 82
+    2300164: eaf1 83
+    2300166: eaf1 84
+    2300168: eaf1 85
+    2300170: eaf1 86
+    2300172: eaf1 87
+    2300174: eaf1 88
+    2300176: eaf1 89
+    2300178: eaf1 9
+    2300180: eaf1 90
+    2300182: eaf1 91
+    2300184: eaf1 92
+    2300186: eaf1 93
+    2300188: eaf1 94
+    2300190: eaf1 95
+    2300192: eaf1 96
+    2300194: eaf1 97
+    2300196: eaf1 98
+    2300198: //RootNode
+    3300000: eaf1
+    3300002: eaf1 1
+    3300004: eaf1 10
+    3300006: eaf1 11
+    3300008: eaf1 12
+    3300010: eaf1 13
+    3300012: eaf1 14
+    3300014: eaf1 15
+    3300016: eaf1 16
+    3300018: eaf1 17
+    3300020: eaf1 18
+    3300022: eaf1 19
+    3300024: eaf1 2
+    3300026: eaf1 20
+    3300028: eaf1 21
+    3300030: eaf1 22
+    3300032: eaf1 23
+    3300034: eaf1 24
+    3300036: eaf1 25
+    3300038: eaf1 26
+    3300040: eaf1 27
+    3300042: eaf1 28
+    3300044: eaf1 29
+    3300046: eaf1 3
+    3300048: eaf1 30
+    3300050: eaf1 31
+    3300052: eaf1 32
+    3300054: eaf1 33
+    3300056: eaf1 34
+    3300058: eaf1 35
+    3300060: eaf1 36
+    3300062: eaf1 37
+    3300064: eaf1 38
+    3300066: eaf1 39
+    3300068: eaf1 4
+    3300070: eaf1 40
+    3300072: eaf1 41
+    3300074: eaf1 42
+    3300076: eaf1 43
+    3300078: eaf1 44
+    3300080: eaf1 45
+    3300082: eaf1 46
+    3300084: eaf1 47
+    3300086: eaf1 48
+    3300088: eaf1 49
+    3300090: eaf1 5
+    3300092: eaf1 50
+    3300094: eaf1 51
+    3300096: eaf1 52
+    3300098: eaf1 53
+    3300100: eaf1 54
+    3300102: eaf1 55
+    3300104: eaf1 56
+    3300106: eaf1 57
+    3300108: eaf1 58
+    3300110: eaf1 59
+    3300112: eaf1 6
+    3300114: eaf1 60
+    3300116: eaf1 61
+    3300118: eaf1 62
+    3300120: eaf1 63
+    3300122: eaf1 64
+    3300124: eaf1 65
+    3300126: eaf1 66
+    3300128: eaf1 67
+    3300130: eaf1 68
+    3300132: eaf1 69
+    3300134: eaf1 7
+    3300136: eaf1 70
+    3300138: eaf1 71
+    3300140: eaf1 72
+    3300142: eaf1 73
+    3300144: eaf1 74
+    3300146: eaf1 75
+    3300148: eaf1 76
+    3300150: eaf1 77
+    3300152: eaf1 78
+    3300154: eaf1 79
+    3300156: eaf1 8
+    3300158: eaf1 80
+    3300160: eaf1 81
+    3300162: eaf1 82
+    3300164: eaf1 83
+    3300166: eaf1 84
+    3300168: eaf1 85
+    3300170: eaf1 86
+    3300172: eaf1 87
+    3300174: eaf1 88
+    3300176: eaf1 89
+    3300178: eaf1 9
+    3300180: eaf1 90
+    3300182: eaf1 91
+    3300184: eaf1 92
+    3300186: eaf1 93
+    3300188: eaf1 94
+    3300190: eaf1 95
+    3300192: eaf1 96
+    3300194: eaf1 97
+    3300196: eaf1 98
+    3300198: //RootNode
+    4300000: Mesh tree
+    4300002: Mesh eaf1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
